@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Store Layout Tutorial</title>
+    <link rel="stylesheet" href="./tutorial-styles.css">
+    <style>
+        .copy-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .custom-alert {
+            position: fixed;
+            right: -300px; /* Start off screen */
+            top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: right 0.5s ease-in-out;
+            z-index: 1000;
+        }
+
+        .custom-alert.show {
+            right: 20px; /* Slide in */
+        }
+
+        .custom-alert.hide {
+            right: -300px; /* Slide out */
+        }
+    </style>
+</head>
+<body>
+    <h1>Building an E-commerce Store Layout: Step-by-Step Tutorial</h1>
+
+    <div class="step">
+        <h2>Step 1: Set up the HTML structure</h2>
+        <p>Create a new HTML file and set up the basic structure:</p>
+        <pre><code id="code1">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Your E-commerce Store&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;!-- Header content will go here --&gt;
+    &lt;/header&gt;
+
+    &lt;section class="hero"&gt;
+        &lt;!-- Hero section content will go here --&gt;
+    &lt;/section&gt;
+
+    &lt;main&gt;
+        &lt;!-- Main content will go here --&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        &lt;!-- Footer content will go here --&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </code></pre>
+        <button class="copy-button" onclick="copyToClipboard('code1')">Copy Code</button>
+        <p>This snippet sets up the basic HTML structure of your e-commerce store with placeholders for header, hero, main, and footer sections.</p>
+        <p>Explanation:</p>
+        <ul>
+            <li><code>&lt;!DOCTYPE html&gt;</code>: This declaration defines the document type and version of HTML.</li>
+            <li><code>&lt;html lang="en"&gt;</code>: This tag defines the root element of an HTML document. The <code>lang</code> attribute specifies the language of the document (English).</li>
+            <li><code>&lt;head&gt;</code>: Contains meta-information about the document, like character set and viewport settings.</li>
+            <li><code>&lt;meta charset="UTF-8"&gt;</code>: Specifies the character encoding for the HTML document.</li>
+            <li><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code>: Ensures the webpage is responsive by setting the viewport width and scale.</li>
+            <li><code>&lt;title&gt;Your E-commerce Store&lt;/title&gt;</code>: Sets the title of the webpage, which appears in the browser tab.</li>
+            <li><code>&lt;link rel="stylesheet" href="styles.css"&gt;</code>: Links an external CSS file named "styles.css" for styling the webpage.</li>
+            <li><code>&lt;body&gt;</code>: Contains the main content of the HTML document.</li>
+            <li><code>&lt;header&gt;, &lt;section class="hero"&gt;, &lt;main&gt;, &lt;footer&gt;</code>: Define different sections of the webpage, each with a placeholder comment.</li>
+        </ul>
+    </div>
+
+    <div class="step">
+        <h2>Step 2: Add the header content</h2>
+        <p>Inside the &lt;header&gt; tag, add the following content:</p>
+        <pre><code id="code2">&lt;div class="container"&gt;
+    &lt;h1&gt;Your E-commerce Store&lt;/h1&gt;
+    &lt;nav&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Products&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Categories&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Cart&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/div&gt;
+        </code></pre>
+        <button class="copy-button" onclick="copyToClipboard('code2')">Copy Code</button>
+        <p>This snippet adds a header with a title and a navigation menu.</p>
+        <p>Explanation:</p>
+        <ul>
+            <li><code>&lt;div class="container"&gt;</code>: A container for the header content, ensuring it aligns properly with other page elements.</li>
+            <li><code>&lt;h1&gt;Your E-commerce Store&lt;/h1&gt;</code>: Displays the store's name as a heading.</li>
+            <li><code>&lt;nav&gt;</code>: Defines a navigation section.</li>
+            <li><code>&lt;ul&gt;</code>: Creates an unordered list.</li>
+            <li><code>&lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;</code>: Each list item contains a link to different sections of the website (Home, Products, Categories, Cart).</li>
+        </ul>
+    </div>
+
+    <div class="step">
+        <h2>Step 3: Create the hero section</h2>
+        <p>Replace the content of the hero section with:</p>
+        <pre><code id="code3">&lt;div class="hero-content"&gt;
+    &lt;h2&gt;Welcome to Our Store&lt;/h2&gt;
+    &lt;p&gt;Discover amazing products at unbeatable prices!&lt;/p&gt;
+    &lt;a href="#" class="cta-button"&gt;Shop Now&lt;/a&gt;
+&lt;/div&gt;
+        </code></pre>
+        <button class="copy-button" onclick="copyToClipboard('code3')">Copy Code</button>
+        <p>This snippet creates a hero section with a welcome message and a call-to-action button.</p>
+        <p>Explanation:</p>
+        <ul>
+            <li><code>&lt;div class="hero-content"&gt;</code>: A container for the hero section's content.</li>
+            <li><code>&lt;h2&gt;Welcome to Our Store&lt;/h2&gt;</code>: A heading welcoming visitors to the store.</li>
+            <li><code>&lt;p&gt;Discover amazing products at unbeatable prices!&lt;/p&gt;</code>: A paragraph encouraging visitors to explore the store's products.</li>
+            <li><code>&lt;a href="#" class="cta-button"&gt;Shop Now&lt;/a&gt;</code>: A call-to-action button prompting visitors to start shopping.</li>
+        </ul>
+    </div>
+
+    <div class="step">
+        <h2>Step 4: Add the main content</h2>
+        <p>Inside the &lt;main&gt; tag, add the following sections:</p>
+        <pre><code id="code4">&lt;div class="container"&gt;
+    &lt;section class="featured-products"&gt;
+        &lt;h2&gt;Featured Products&lt;/h2&gt;
+        &lt;div class="products-grid"&gt;
+            &lt;!-- Add 3 product divs here --&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="categories"&gt;
+        &lt;h2&gt;Product Categories&lt;/h2&gt;
+        &lt;div class="categories-grid"&gt;
+            &lt;!-- Add 4 category divs here --&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class="about"&gt;
+        &lt;h2&gt;About Our Store&lt;/h2&gt;
+        &lt;p&gt;Welcome to our store! We offer a wide range of high-quality products to meet all your needs.&lt;/p&gt;
+    &lt;/section&gt;
+&lt;/div&gt;
+        </code></pre>
+        <button class="copy-button" onclick="copyToClipboard('code4')">Copy Code</button>
+        <p>This snippet adds the main content sections for featured products, categories, and an about section.</p>
+        <p>Explanation:</p>
+        <ul>
+            <li><code>&lt;section class="featured-products"&gt;</code>: A section for displaying featured products.</li>
+            <li><code>&lt;h2&gt;Featured Products&lt;/h2&gt;</code>: A heading for the featured products section.</li>
+            <li><code>&lt;div class="products-grid"&gt;</code>: A grid container for product items.</li>
+            <li><code>&lt;!-- Add 3 product divs here --&gt;</code>: Placeholder comment to add product divs later.</li>
+            <li><code>&lt;section class="categories"&gt;</code>: A section for displaying product categories.</li>
+            <li><code>&lt;h2&gt;Product Categories&lt;/h2&gt;</code>: A heading for the categories section.</li>
+            <li><code>&lt;div class="categories-grid"&gt;</code>: A grid container for category items.</li>
+            <li><code>&lt;!-- Add 4 category divs here --&gt;</code>: Placeholder comment to add category divs later.</li>
+            <li><code>&lt;section class="about"&gt;</code>: A section for displaying information about the store.</li>
+            <li><code>&lt;h2&gt;About Our Store&lt;/h2&gt;</code>: A heading for the about section.</li>
+            <li><code>&lt;p&gt;Welcome to our store! We offer a wide range of high-quality products to meet all your needs.&lt;/p&gt;</code>: A paragraph providing an introduction to the store.</li>
+        </ul>
+    </div>
+
+    <div class="step">
+        <h2>Step 5: Create the footer content</h2>
+        <p>Inside the &lt;footer&gt; tag, add the following content:</p>
+        <pre><code id="code5">&lt;div class="container"&gt;
+    &lt;p&gt;&amp;copy; 2024 Your E-commerce Store. All rights reserved.&lt;/p&gt;
+    &lt;ul class="social-media"&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Facebook&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Twitter&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Instagram&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+        </code></pre>
+        <button class="copy-button" onclick="copyToClipboard('code5')">Copy Code</button>
+        <p>This snippet creates a footer with copyright information and social media links.</p>
+        <p>Explanation:</p>
+        <ul>
+            <li><code>&lt;div class="container"&gt;</code>: A container for the footer content.</li>
+            <li><code>&lt;p&gt;&amp;copy; 2024 Your E-commerce Store. All rights reserved.&lt;/p&gt;</code>: Displays copyright information with the current year.</li>
+            <li><code>&lt;ul class="social-media"&gt;</code>: An unordered list for social media links.</li>
+            <li><code>&lt;li&gt;&lt;a href="#"&gt;Facebook&lt;/a&gt;&lt;/li&gt;</code>: A list item with a link to the Facebook page.</li>
+            <li><code>&lt;li&gt;&lt;a href="#"&gt;Twitter&lt;/a&gt;&lt;/li&gt;</code>: A list item with a link to the Twitter page.</li>
+            <li><code>&lt;li&gt;&lt;a href="#"&gt;Instagram&lt;/a&gt;&lt;/li&gt;</code>: A list item with a link to the Instagram page.</li>
+        </ul>
+    </div>
+
+    <div id="customAlert" class="custom-alert hide">
+        Code copied to clipboard!
+    </div>
+
+    <script>
+        function copyToClipboard(id) {
+            const codeElement = document.getElementById(id);
+            const range = document.createRange();
+            range.selectNodeContents(codeElement);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            document.execCommand('copy');
+            showCustomAlert();
+        }
+
+        function showCustomAlert() {
+            const alert = document.getElementById('customAlert');
+            alert.classList.remove('hide');
+            alert.classList.add('show');
+            setTimeout(() => {
+                alert.classList.remove('show');
+                alert.classList.add('hide');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
